@@ -45,7 +45,7 @@ Markdown的标签是【轻量级】【标记】【语言】【纯文本编辑】
 ## 3.6.图片
 插入图片的使用方式：  
 \![图片描述可以不写但中括号必须要有]\(图片地址，本地连接或URL地址，网上好多人都说支持决定对路径，百般尝试发现不行，只能相对路径)  
-![随便一个图](.\\images\\markdown1.png)  
+![随便一个图](images/markdown1.png) 
 ## 3.7.列表
 圆圈标头（无序列表），使用*、+、-再加一个空格作为列表的标记,数字标头（有序列表），使用1.2.3.：  
 \* 无序列表  
@@ -138,7 +138,7 @@ yaml
 [^2]: HyperTextMarkupLanguage超文本标记语言    
 [^T]: NEWWAYTOREAD&WRITEMARKDOWN  
 
-![效果图](.\\images\\markdown1.png)
+![效果图](images/markdown1.png)
 ## 3.14.特殊符号
 前面加反斜线\即可以显示符号本身
 ## 3.15.书写公式
@@ -146,7 +146,7 @@ yaml
 \$$E=mc^2\$$效果如下：
 $$E=mc^2$$
 ## 3.16.HTML表格与改字体
-![](.\\images\\markdown2.jpg)
+![](images/markdown2.jpg)
 <table>
     <tr>
         <th rowspan="2">值班人员</th>
