@@ -104,5 +104,6 @@ xixireact项目
 <video width="320" height="240" controls>
     <source src="../images/react.mp4" type="video/mp4">
 </video>
+<iframe src="../images/react.mp4" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 
