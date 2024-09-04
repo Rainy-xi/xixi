@@ -166,17 +166,6 @@ $$E=mc^2$$
         <td>王平</td>
     </tr>
 </table>
-<font face="楷体" color=#00ffff size=5>改变文字格式</font>
-```mermaid
-flowchat
-st=>start: Start
-op=>operation: Your Operation
-cond=>condition: Yes or No?
-e=>end
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
 
 
 
