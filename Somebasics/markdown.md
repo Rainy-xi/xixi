@@ -153,8 +153,6 @@ yaml
 $$E=mc^2
 ## 3.16.HTML表格与改字体
 ![](/Somebasics/images/markdown2.jpg)
-=======
-![](images/markdown2.jpg)
 <table>
     <tr>
         <th rowspan="2">值班人员</th>
