@@ -182,13 +182,13 @@ function Footer() {
       className="p-2 text-xs flex justify-around items-center bg-gray-900 text-white"
       id="Footer"
     >
-      <div>© 2021 Domo's Hat Shop</div>
+      <div>© 202456 Domo's Hat Shop</div>
     </footer>
   );
 }
 
 function DomoHatShop() {
-  const [countInCart, setCountInCart] = useState(2);
+  const [countInCart, setCountInCart] = useState(0);
   return (
     <div className="bg-white top-0 sticky min-h-screen">
       <Header countInCart={countInCart} />
