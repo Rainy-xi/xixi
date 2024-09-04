@@ -151,7 +151,7 @@ yaml
 `$$E=mc^2$$`  
 效果如下：
 $$E=mc^2$$
-## 3.16.HTML表格与改字体
+## 3.16.HTML表格
 ![](/Somebasics/images/markdown2.jpg)
 <table>
     <tr>
@@ -166,12 +166,6 @@ $$E=mc^2$$
         <td>王平</td>
     </tr>
 </table>
-<font face="楷体" color=#00ffff size=5>改变文字格式</font>
-- [ ] 支持以 PDF 格式导出文稿
-- [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率
-- [x] 新增 Todo 列表功能
-- [x] 修复 LaTex 公式渲染问题
-- [x] 新增 LaTex 公式编号功能
 
 
 
