@@ -101,8 +101,6 @@ export default App;
 ## 3.5 再改一个一个大白菜戴帽子  
 xixireact项目  
 
-<video width="320" height="240" controls>
-    <source src="../images/react.mp4" type="video/mp4">
-</video>
+![一个gif动图](../images/react.gif)
 
 
