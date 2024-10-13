@@ -68,7 +68,7 @@ CSS指层叠样式表（Cascading Style Sheets），可以一层一层装修网�
 - 类选择器以一个点号显示： “.center{text-align:center}”
 - 只要有同一类名的class都会被选择
 - id选择器会对标有特定id的html元素指定特定的样式
-- id选择器以“#”定义
+- id选择器以“#”定义，**只能独一无二，否则js里面报错**（不独一无二就是class了不可以用id）
 ```html
 <style>
     .p1{color:red}
