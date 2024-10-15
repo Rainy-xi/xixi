@@ -218,3 +218,46 @@ target
 - 将制作好的图片放到项目的根目录
 - 在head当中添加以下标签图标：\<link href="favicon.ico" rel="shortcut icon">
 - 输入"link:favicon+tab"
+# 十二、标签元素划分
+## 块元素
+特点:
+- 自己单独占一行，就像一个段落，随时设置宽度和高度
+- 常见块元素：ul;li;form;h1-h6;hr;p;div
+## 内联（行内）元素
+特点：
+- 不会自己独立占一行，就好像一个单词，一直往后排，宽度高度内边距外边距都不可改变
+- 常见内联元素：a;big;br;em;img;label;span;
+## 内联（行内）-块级元素
+特点：
+- 多个内联（行内）块级元素可以在一行，能设置宽度和高度
+- 常见的内联块级元素：input;select;textarea;
+## 块元素与内联元素相互转换
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            div{
+                display:none;<!--div标签及内容不显示-->
+            }
+            p{
+                color:purple;
+                display:inline;<!--块标签转为行内标签-->
+            }
+            a{
+                background-color:skyblue;
+                display:block;<!--行内标签转为块级标签-->
+            }
+        </style>
+    </head>
+    <body>
+        <div>2</div><!--不可见-->
+        <p>外面的p标签</p><!--行内不换行-->
+        <p>外面的p标签</p><!--行内不换行-->
+        <a>1</a><!--单独成行换行-->
+        <a>1</a><!--单独成行换行-->
+    </body>
+</html>
+```

@@ -87,3 +87,293 @@ CSS指层叠样式表（Cascading Style Sheets），可以一层一层装修网�
     <p id="p3">这是一个带id的</p><!--orange-->
 </body>
 ```
+### 复合选择器
+- 帮助我们更加精准地拿到对应地标签设置对应地样式
+```html
+<style>
+    div.test1{
+        color:red;
+    }
+    p#p1{
+        color:yellow;
+    }
+</style>
+<body>
+    <p id="p1">我是p1</p><!--yellow-->
+    <div class="p1">我是p1</p>
+    <div class="p2">我是p2</p>
+    <div class="test1">一个段落</div><!--red-->
+</body>
+```
+### 群组选择器
+- 群组选择器也叫并列选择器，可以同时使用多个选择器，多个选择器将被同时应用指定地样式。
+- 语法：选择器1，选择器2，选择器3{}
+```html
+<style>
+    div,p,span,.test1,#p1{<!--body里面所有的div标签、p标签、span标签、.test1类别、p1id都是红色-->
+        color:red;
+    }
+</style>
+```
+### 后代选择器
+- html里面就是一个dom树
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            #main p{<!--id叫main的所有p标签后代-->
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <p>div中的p标签</p><!--id叫main的所有p标签后代red-->
+            <span>
+                <p>span中的p标签</p><!--id叫main的所有p标签后代red-->
+            </span>
+        </div>
+        <p>外面的p标签</p>
+    </body>
+</html>
+```
+### 直接后代选择器
+- 只要儿子不要孙子
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            #main > p{<!--id叫main的所有p标签后代-->
+                color:green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <p>div中的p标签</p><!--id叫main的p标签的直接后代green-->
+            <span>
+                <p>span中的p标签</p>
+            </span>
+        </div>
+        <p>外面的p标签</p>
+    </body>
+</html>
+```
+### 兄弟选择器
+- 除了根据祖先父子关系，还可以根据兄弟关系查找元素
+- 语法：1.查找后边一个兄弟元素：兄弟元素+兄弟元素{}
+- 语法：2.查找后边所有兄弟元素：兄弟元素~兄弟元素{}
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            div+p{
+                color:purple;
+            }
+            div~p{
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <p>div中的p标签</p>
+            <span>
+                <p>span中的p标签</p>
+            </span>
+        </div>
+        <p>外面的p标签</p><!--purple--><!--white-->
+        <p>外面的p标签</p><!--white-->
+        <p>外面的p标签</p><!--white-->
+        <p>外面的p标签</p><!--white-->
+        <p>外面的p标签</p><!--white-->
+        <p>外面的p标签</p><!--white-->
+    </body>
+</html>
+```
+- 代码从上往下执行，当前执行的会覆盖以前的
+### 属性选择器
+- 用在输入框比较多
+- 属性选择器可以挑选带有特殊属性的标签
+- 语法：
+1. [属性名]
+2. [属性名="属性值"]
+3. [属性名~="属性值"]
+4. [属性名|="属性值"]
+5. [属性名$="属性值"]
+6. [属性名*="属性值"]
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            div[name]{<!--先定位到div标签，再找其中属性是name的-->
+            background-color:skyblue;
+            }
+            div[name="main"]{
+                color:red;
+            }
+            div[name][page]{
+                color:goldenrod;
+            }
+        </style>
+    </head>
+    <body>
+        <div name="main"><!--属性就是name,属性值就是main--><!--background-color:skyblue--><!--red-->
+            div中
+        </div>
+        <div name="title" page="66">标题</div><!--background-color:skyblue--><!--goldenrod-->
+        <div>外面</div>
+    </body>
+</html>
+```
+**总结：","就是or，没有符号就是and**
+### 伪类和伪元素（针对特殊使用场景）
+#### 使用场景：
+- 有时候你需要选择本身没有标签，但是仍然易于识别的网页部位，比如段落首行或鼠标进入等等
+- 伪类是单“：”开头，伪元素是双“：：”开头
+#### 针对a标签：
+- 正常链接“a:link”;
+- 访问过的链接“a:visited(只能定义字体颜色)”；
+- 鼠标滑过的链接“a:hover”;
+- 正在点击的链接：“a:active”
+#### 针对其他标签：
+- 获取焦点“:focus”
+- 指定元素前“:before”
+- 指定元素后“:after”
+- 选中的元素“::selection”
+- 首字母“:first-letter”
+- 首行“:first-line”
+- 选择第一个子标签“:first-child”
+- 选择最后一个子标签“:last-child”
+- 选择指定位置的子元素“:nth-child”
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            p{
+                width:300px;
+                background-color:red;
+            }
+            p::first-letter{
+                font-size:30px;
+                color:green;
+            }
+            p::first-line{
+                color:yellow;
+            }
+            p.test1:hover{<!--鼠标扫到这个地方的时候发生变化-->
+                width:600px;
+                background-color:deepskyblue;
+            }
+            input:focus{
+                width:500px;
+                height:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="test1">一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落</p>
+        <p>一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落</p>
+        <p>一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落一个段落</p>
+        <input type="text">
+    </body>
+</html>
+```
+### 否定伪类
+- 否定伪类可以帮助我们选择不是其他标签的某个标签
+- 语法：“:not(选择器){}”
+- 比如div:not(.box)表示选择所有的div元素但是class为box的除外
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            div:not(.box){
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>1</div><!--red-->
+        <div>2</div><!--red-->
+        <div class="box">3</div>
+        <div>4</div><!--red-->
+        <div>5</div><!--red-->
+        <div>6</div><!--red-->
+        <div>7</div><!--red-->
+        <div>8</div><!--red-->
+    </body>
+</html>
+```
+## 选择器的优先级别
+- 虽然代码从上往下执行，但存在一些特殊的优先级别
+- important>内联>id选择器>类选择器>标签选择器>*>继承
+## 总结：1.选择器的针对性越强，它的优先级越高
+## 总结：2.选择器的权值；原则：选择器的权值加在一起，大的优先，如果权值相同从上到下执行
+- *：0
+- 标签：1
+- 类：10
+- 属性：10
+- 伪类/伪元素：10
+- id:100
+- important:1000
+# 标签元素划分
+## 块元素
+特点:
+- 自己单独占一行，就像一个段落，随时设置宽度和高度
+- 常见块元素：ul;li;form;h1-h6;hr;p;div
+## 内联（行内）元素
+特点：
+- 不会自己独立占一行，就好像一个单词，一直往后排，宽度高度内边距外边距都不可改变
+- 常见内联元素：a;big;br;em;img;label;span;
+## 内联（行内）-块级元素
+特点：
+- 多个内联（行内）块级元素可以在一行，能设置宽度和高度
+- 常见的内联块级元素：input;select;textarea;
+## 块元素与内联元素相互转换
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            div{
+                display:none;<!--div标签及内容不显示-->
+            }
+            p{
+                color:purple;
+                display:inline;<!--块标签转为行内标签-->
+            }
+            a{
+                background-color:skyblue;
+                display:block;<!--行内标签转为块级标签-->
+            }
+        </style>
+    </head>
+    <body>
+        <div>2</div><!--不可见-->
+        <p>外面的p标签</p><!--行内不换行-->
+        <p>外面的p标签</p><!--行内不换行-->
+        <a>1</a><!--单独成行换行-->
+        <a>1</a><!--单独成行换行-->
+    </body>
+</html>
+```
