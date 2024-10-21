@@ -7,43 +7,124 @@
     <meta name="description" content="有牙齿问题,找河马牙医,儿童口腔,牙疼怎么办,矫正多少钱,种植牙,小白兔牙科">
     <meta name="renderer" content="webkit"/>
     <style>
-        .p1{color:red}
-        .p2{color:green}
-        p{color:blue}
-        #p3{color:orange}
+        #header{
+            height: 80px;
+        }
+        #header .header-center{
+            width: 1260px;
+            height: 80px;
+            margin: 0 auto;
+        }
+        .header-c-left{
+            float:left;
+            height: 80px;
+            width:450px;
+            line-height: 80px;
+        }
+        .header-c-right{
+            float:right;
+            height: 80px;
+            width:450px;
+            line-height: 80px;
+
+        }
+        .header-c-right a{
+            margin-right: 30px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .header-c-right a span{
+            vertical-align: middle;
+        }
+        .header-c-right a img{
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        body{
+            margin: 0;
+        }
+        section img{
+            width: 100%;
+            vertical-align: top;
+        }
+        #footer{
+            height: 30px;
+            background-color:#346699;
+        }
+        #footer .footer-center{
+            width: 1260px;
+            height: 30px;
+            margin: 0 auto;
+            line-height: 30px;
+        }
+        #footer .footer-center p{
+            margin-top: 0;
+            text-align: right;
+        }
+        #footer .footer-center p span{
+            margin-right: 5px;
+            font-size: 12px;
+            color: white;
+        }
     </style>
 </head>
-<body style="margin: 0;"><!--这里有外边距需要清除-->
-    <header style="height: 80px;background-color: rgb(251, 251, 245);">
-        头
+<body><!--这里有外边距需要清除-->
+    <header id="header">
+        <div class="header-center">
+            <!--头部左边-->
+            <div class="header-c-left">
+                <img src="./images/0.png" alt="">
+            </div>
+            <!--头部右边-->
+            <div class="header-c-right">
+                <a href="#">
+                    <img src="./images/6.png">
+                    <span>
+                        首页
+                    </span>
+                </a>
+                <a href="#">
+                    <img src="./images/5.png">
+                    <span>
+                        关于我们
+                    </span>
+                </a>
+                <a href="#">
+                    <img src="./images/7.png">
+                    <span>
+                        联系我们
+                    </span>
+                </a>
+            </div>
+
+        </div>
     </header>
     <article>
         <!--"section*4"+tab-->
         <!--复制“style="height: 80px;background-color: yellow;”按alt，一个个点一下，粘贴-->
-        <section style="height: 800px;background-color: purple;">
+        <section>
             <!--img+tab-->
-            <img src="../2.1牙医网页/images/1.png" alt="" height="100%" width="100%">
+            <img src="../2.1牙医网页/images/1.png" alt="">
         </section>
-        <section style="height: 604px;background-color: green;">
-            <img src="../2.1牙医网页/images/2.png" alt="" height="100%" width="100%">
+        <section>
+            <img src="../2.1牙医网页/images/2.png" alt="">
         </section>
-        <section style="height: 604px;background-color: red;">
-            <img src="../2.1牙医网页/images/3.png" alt="" height="100%" width="100%">
+        <section>
+            <img src="../2.1牙医网页/images/3.png" alt="">
         </section>
-        <section style="height: 597px;background-color: yellow;">
-            <img src="../2.1牙医网页/images/4.png" alt="" height="100%" width="100%">
+        <section>
+            <img src="../2.1牙医网页/images/4.png" alt="" >
         </section>
-        <p class="p1">我是p1</p>
-        <p class="p1">我是p1</p>
-        <p class="p2">我是p2</p>
-        <p class="p2">我是p2</p>
-        <p class="p1 p2">我是p1和p2</p>
-        <p>没有class的p</p>
-        <p id="p3">这是一个带id的</p>
     </article>
     
-    <footer style="height: 80px;background-color: rgb(255, 145, 0);">
-        尾
+    <footer id="footer">
+        <div class="footer-center">
+            <p>
+                <span>@2024</span>
+                <span>上海网络科技有限公司</span>
+                <span>19372869</span>
+                <span>客服热线：121112</span>
+            </p>
     </footer>
 </body>
 

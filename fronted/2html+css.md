@@ -377,3 +377,246 @@ CSS指层叠样式表（Cascading Style Sheets），可以一层一层装修网�
     </body>
 </html>
 ```
+# 块属性
+## 盒子模型
+### 基本概念
+- 网页上地每个标签都是一个盒子
+- 每个盒子都有四个属性
+1. 内容（content）：盒子里装地东西；网页中通常是指文字和图片；
+2. 填充（padding，内边距）：怕盒子里装的（贵重）东西损坏，而添加的泡沫或其他抗震的辅料
+3. 边框（border）:盒子本身
+4. 边界（margin,外边距）：盒子摆放的时候不能堆叠在一起，盒子之间要留一定的空隙保持通风；同时也为了方便取出；
+### 标准的盒子模型
+![标准盒子模型](./image/标准盒子.png)
+### IE盒子模型
+![IE盒子模型](./image/IE盒子.png)
+## 常用属性
+### 内容
+- height 设置元素高度
+- max-height 设置元素的最大高度
+- max-width 设置元素的最大宽度
+- min-height 设置元素的最小高度
+- min-width 设置元素的最小宽度
+- width 设置元素的宽度
+### 内边距
+“padding”在一个声明中设置所有内边距属性：
+- 例1：padding:10px 5px 15px 20px(上内边距是10px,右内边距是5px，下内边距是15px，左内边距是20px)
+- 例2：padding:10px 5px 15px(上内边距10px，右内边距是5px，下内边距是15px，左内边距是5px)
+- 例3：padding:10px 5px（上内边距和下内边距是10px，右内边距和左内边距是5px）
+- 例4：padding:10px(所有4个内边距都是10px)
+“padding-bottom”设置元素的下内边距
+“padding-left”设置元素的左内边距
+“padding-right”设置元素的右内边距
+“padding-top”设置元素的上内边距
+```html
+<style>
+    #box{
+        padding-left:20px;
+        padding-top:30px;
+        padding-right:50px;
+        padding-bottom:10px;
+        <!--等价于-->
+        padding:30px 50px 10px 20px;
+    }
+</style>
+```
+### 边框
+设置4个边框的样式：
+border简写属性在一个声明设置所有的边框属性，可以按照顺序设置如下属性：
+border所有边框
+border-top上边框
+border-right右边框
+border-bottom下边框
+border-left左边框
+
+border-width边框宽度
+border-style边框格式，solid实线，dashed虚线,double双线
+border-color边框颜色
+border-redius边框圆角
+border-redius:50%圆形
+border-top-left-redius:左上角边框圆角
+```html
+p{
+    border:5px solid red;
+}
+```
+### 外边距
+- 例1：margin:10px 5px 15px 20px;上外边距10px；右外边距5px；下外边距：15px；左外边距20px；
+- 例2：margin:10px 5px 15px;上外边距10px；右外边距5px；下外边距15px;左外边距5px;
+- 例3：margin:10px 5px;上外边距和下外边距10px;右外边距和左外边距px;
+- 例4：margin:10px;所有4个外边距都是10px；
+# 浮动
+## 为什么要有浮动
+两个块级元素都设置了宽度和高度，两个想要占一行，就使用浮动来进行设置
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            #box{
+                width:80%;
+                height:400px;
+                background-color:red;
+            }
+            .test1{
+                background-color:#0c80dc;
+                float:left;
+            }
+            .test2{
+                background-color:greenyellow;
+                float:right;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <div class="test1">第一个</div>
+            <div class="test2">第二个</div>
+    </body>
+</html>
+```
+# 标签居中
+## 水平居中
+行内标签：
+- 行内-块级标签：text-align:center
+- 块级标签：margin:0 auto
+## 垂直居中
+- line-height:300px（在300p区间内垂直居中）
+- 定位，绝对与相对
+- 多标签图片等行内的，要对齐，可以用：vertical-align:middle;
+# 河马牙医案例
+```html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>河马牙医</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"><!--type="image/x-icon"站点图标的类型-->
+    <meta name="keywords" content="牙疼怎么办,智齿是什么,拔牙多少钱,矫正多少钱,北大口腔,小白兔牙科">
+    <meta name="description" content="有牙齿问题,找河马牙医,儿童口腔,牙疼怎么办,矫正多少钱,种植牙,小白兔牙科">
+    <meta name="renderer" content="webkit"/>
+    <style>
+        #header{
+            height: 80px;
+        }
+        #header .header-center{
+            width: 1260px;
+            height: 80px;
+            margin: 0 auto;
+        }
+        .header-c-left{
+            float:left;
+            height: 80px;
+            width:450px;
+            line-height: 80px;
+        }
+        .header-c-right{
+            float:right;
+            height: 80px;
+            width:450px;
+            line-height: 80px;
+
+        }
+        .header-c-right a{
+            margin-right: 30px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .header-c-right a span{
+            vertical-align: middle;
+        }
+        .header-c-right a img{
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        body{
+            margin: 0;
+        }
+        section img{
+            width: 100%;
+            vertical-align: top;
+        }
+        #footer{
+            height: 30px;
+            background-color:#346699;
+        }
+        #footer .footer-center{
+            width: 1260px;
+            height: 30px;
+            margin: 0 auto;
+            line-height: 30px;
+        }
+        #footer .footer-center p{
+            margin-top: 0;
+            text-align: right;
+        }
+        #footer .footer-center p span{
+            margin-right: 5px;
+            font-size: 12px;
+            color: white;
+        }
+    </style>
+</head>
+<body><!--这里有外边距需要清除-->
+    <header id="header">
+        <div class="header-center">
+            <!--头部左边-->
+            <div class="header-c-left">
+                <img src="./images/0.png" alt="">
+            </div>
+            <!--头部右边-->
+            <div class="header-c-right">
+                <a href="#">
+                    <img src="./images/6.png">
+                    <span>
+                        首页
+                    </span>
+                </a>
+                <a href="#">
+                    <img src="./images/5.png">
+                    <span>
+                        关于我们
+                    </span>
+                </a>
+                <a href="#">
+                    <img src="./images/7.png">
+                    <span>
+                        联系我们
+                    </span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+    <article>
+        <!--"section*4"+tab-->
+        <!--复制“style="height: 80px;background-color: yellow;”按alt，一个个点一下，粘贴-->
+        <section>
+            <!--img+tab-->
+            <img src="../2.1牙医网页/images/1.png" alt="">
+        </section>
+        <section>
+            <img src="../2.1牙医网页/images/2.png" alt="">
+        </section>
+        <section>
+            <img src="../2.1牙医网页/images/3.png" alt="">
+        </section>
+        <section>
+            <img src="../2.1牙医网页/images/4.png" alt="" >
+        </section>
+    </article>
+    
+    <footer id="footer">
+        <div class="footer-center">
+            <p>
+                <span>@2024</span>
+                <span>上海网络科技有限公司</span>
+                <span>19372869</span>
+                <span>客服热线：121112</span>
+            </p>
+    </footer>
+</body>
+
+</html>
+```
