@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin-bottom: 200px;
+}
+
+/********头部star**********/
+#header{
+    height: 60px;
+}
+#header a{
+    color: black;
+    font-size: 16px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+#header .header-left{
+    height: 60px;
+    width: 50%;
+    float:left;
+    margin-top: 9px;
+}
+#header .header-right{
+    height: 60px;
+    width: 50%;
+    float:right;
+    text-align: right;
+    line-height: 30px;
+}
+#header .header-right a{
+    font-weight: bolder;
+    margin-right: 15px;
+}
+/********头部end**********/
+
+/********搜索star**********/
+#content{
+    width: 641px;
+    height: 189px;
+    margin:20px auto;
+}
+#content .logo{
+    height: 112px;
+    width: 641px;
+    text-align: center;
+}
+#content .logo img{
+    width: 270px;
+    height: 112px;
+}
+#content .search{
+    width: 100%;
+    height: 77px;
+    padding-top:10px ;
+}
+#content .search form{
+    width: 100%;
+    height: 44px;
+}
+#content .search form .search-input{
+    width: 536px;
+    height: 40px;
+    padding-left: 8px;
+    outline: none;
+    border:2px solid #8c8b8b;
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px;
+    float: left;
+}
+#content .search form .search-input:focus{
+    border-color: #398bfb;
+}
+#content .search-submit{
+    width: 100px;
+    height: 40px;
+    background-color: #398bfb;
+    border:none;
+    float:left;
+    color:aliceblue;
+    border-top-right-radius: 10px; 
+    border-bottom-right-radius: 10px; 
+    font-size: 18px;
+}
+/********搜索end**********/
+
+/********列表star**********/
+#list{
+    width: 893px;
+    height: 600px;
+    border:1px solid #e0e0e0;
+    margin:0 auto;
+}
+/********列表end**********/
+
