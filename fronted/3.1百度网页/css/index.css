@@ -90,8 +90,102 @@ body{
 #list{
     width: 893px;
     height: 600px;
-    border:1px solid #e0e0e0;
     margin:0 auto;
+}
+#list .list-head{
+    height: 40px;
+    line-height: 40px;
+}
+#list .list-head .list-head-left{
+    float:left;  
+    /**解决a标签之间空格留白问题**/
+    font-size: 0; 
+}
+#list .list-head .list-head-left a{
+    display: inline;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 0 10px;
+    color: #555;
+    vertical-align: top;
+}
+#list .list-head .list-head-left a:hover{
+    background-color: #ccc;
+}
+#list .list-head .list-head-right{
+    float:right; 
+    margin-right: 10px; 
+}
+#list .list-head .list-head-right a img{
+    vertical-align: middle;
+}
+/*列表内容*/
+#list .list-content{
+
+}
+#list .list-content .list-content-left{
+    width: 575px;
+    height:600px;
+    float:left;
+    padding:10px 5px 5px 10px;
+}
+#list .list-content .list-content-left .list-content-cell0{
+    padding-bottom: 18px;
+    padding-top: 18px;
+}
+#list .list-content .list-content-left .list-content-cell{
+    padding-bottom: 18px;
+    padding-top: 18px;
+    height: 162px;
+}
+#list .list-content .list-content-left h3{
+    margin-bottom: 10px;
+}
+#list .list-content .list-content-left p{
+    margin: 10px 0;
+    color:#555;
+    font-size: 12px;
+}
+#list .list-content .list-content-left .list-content-cell img{
+    float:left;
+    width: 184px;
+    height: 122px;
+}
+#list .list-content .list-content-left .list-content-cell .cell-title{
+    float: left;
+    width:350px;
+    padding: 10px;
+}
+#list .list-content .list-content-right{
+    width: 315px;
+    height: 600px;
+    float: left;
+}
+#list .list-content .list-content-right .list-content-right-top{
+    height: 60px;
+    width:315px;
+    padding: 10px;
+}
+#list .list-content .list-content-right .list-content-right-top h4{
+    float: left;
+    margin-top: 9px;
+}
+#list .list-content .list-content-right .list-content-right-top div{
+    float: right;
+}
+#list .list-content .list-content-right .list-content-right-top div img{
+    vertical-align: middle;
+}
+#list .list-content .list-content-right .list-content-right-body{
+    padding: 20px;
+}
+#list .list-content .list-content-right .list-content-right-body ul li{
+    list-style: none;
+    width:330px;
+    height: 40px;
+}
+#list .list-content .list-content-right .list-content-right-body img{
+    vertical-align: middle;
 }
 /********列表end**********/
 
