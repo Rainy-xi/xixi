@@ -81,7 +81,7 @@
     var str1 = null;
     var str2 = undefined;
     console.log(str1 == str2);
-    console.log(str1 === str2);
+    console.log(str1 === str2);//三个等号除了比较内容还比较类型
 </script>
 <script type="text/html">
     // toString()
@@ -108,6 +108,14 @@
     var num5 = NaN;
     console.log(num5.toString());
     console.log(typeof num5.toString());
+    /*
+    NaN 的意义：NaN 表示一个未定义或无法表示的数值结果。它是 Number 类型的一部分，主要用于在数值运算失败时返回结果。例如，试图将非数字字符串转换为数字、0 除以 0、取非数字的平方根，都会返回 NaN。
+    NaN 的用例：NaN 通常用于表示异常或非法的数值结果。
+    console.log(0 / 0);        // NaN
+    console.log(parseInt("a")); // NaN
+    console.log(Math.sqrt(-1)); // NaN
+    与自身不相等：NaN 是唯一一个与自身不相等的 JavaScript 值，因此 NaN === NaN 返回 false。
+    */
 
 </script>
 <script type="text/html">
@@ -172,8 +180,8 @@
 <script>
     var str = '123.12abc123.44';
     console.log(Number(str)); // NaN
-    console.log(parseInt(str));
-    console.log(parseFloat(str));
+    console.log(parseInt(str));//123
+    console.log(parseFloat(str));//123.12
 </script>
 </body>
 </html>
